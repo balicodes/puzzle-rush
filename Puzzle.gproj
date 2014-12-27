@@ -1,0 +1,8 @@
+<project>
+ <properties touchToMouse="1" scaleMode="0" retinaDisplay="0" encryptCode="0" packageName="com.yourdomain.yourapp" logicalWidth="320" autorotation="0" mouseTouchOrder="0" encryptAssets="0" architecture="0" iosDevice="0" orientation="0" fps="60" mouseToTouch="1" logicalHeight="480" assetsOnly="0">
+  <imageScales/>
+ </properties>
+ <file source="arena.lua"/>
+ <file source="tile.lua"/>
+ <file source="main.lua"/>
+</project>
