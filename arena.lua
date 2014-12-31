@@ -7,10 +7,8 @@ function Arena:init()
 	self.arenaWidth = self.screenWidth * 0.9
 	
 	if self.screenWidth > self.screenHeight then
-		self.arenaWidth = self.screenHeight
+		self.arenaWidth = self.screenHeight * 0.9
 	end
-	
-	self:addEventListener(Event.ENTER_FRAME, self.renderTiles, self)
 end
 
 function Arena:getWidth()
@@ -18,13 +16,17 @@ function Arena:getWidth()
 end
 
 function Arena:getArenaX()
-	return (self.screenWidth - self.arenaWidth)/2
+	if self.screenWidth > self.screenHeight then
+		return (self.screenWidth - self.arenaWidth)/2
+	else
+		return (self.screenWidth - self.arenaWidth)/2
+	end
 end
 
 function Arena:getArenaY()
-	return (self.screenWidth - self.arenaWidth)/2
-end
-
-function Arena:renderTiles(event)
-	
+	if self.screenWidth > self.screenHeight then
+		return (self.screenHeight - self.arenaWidth)/2
+	else
+		return (self.screenWidth - self.arenaWidth)/2
+	end
 end

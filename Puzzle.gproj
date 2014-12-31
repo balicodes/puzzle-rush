@@ -1,7 +1,13 @@
 <project>
- <properties touchToMouse="1" scaleMode="0" retinaDisplay="0" encryptCode="0" packageName="com.yourdomain.yourapp" logicalWidth="320" autorotation="0" mouseTouchOrder="0" encryptAssets="0" architecture="0" iosDevice="0" orientation="0" fps="60" mouseToTouch="1" logicalHeight="480" assetsOnly="0">
+ <properties architecture="1" retinaDisplay="0" orientation="0" mouseToTouch="1" scaleMode="3" fps="60" touchToMouse="1" assetsOnly="0" encryptAssets="0" logicalWidth="320" encryptCode="0" autorotation="0" mouseTouchOrder="0" iosDevice="0" logicalHeight="480" packageName="com.balitechy.puzzela">
   <imageScales/>
  </properties>
+ <file source="puzzle.lua"/>
+ <folder name="modules">
+  <file source="modules/scenemanager.lua"/>
+  <file source="modules/easing.lua"/>
+  <file source="modules/button.lua"/>
+ </folder>
  <file source="arena.lua"/>
  <file source="tile.lua"/>
  <file source="main.lua"/>
