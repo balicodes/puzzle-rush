@@ -15,7 +15,7 @@ function Tile:init(game, row, col, width)
 	-- add tile-bg
 	local background = Shape.new()
 	background:setLineStyle(1, 0xffffff)
-	background:setFillStyle(Shape.SOLID, 0xff0000, 0.5)
+	background:setFillStyle(Shape.SOLID, 0xffffff, 0.5)
 	background:beginPath()
 	background:moveTo(0, 0)
 	background:lineTo(self.width, 0)

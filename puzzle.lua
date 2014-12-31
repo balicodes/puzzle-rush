@@ -33,6 +33,7 @@ function Puzzle:init(params)
 	self:setMovementFlags()
 	
 	-- add puzzle arena to scene.
+	self:addChild(imgBackground)
 	self:addChild(arena)
 end
 
