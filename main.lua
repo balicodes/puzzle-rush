@@ -1,16 +1,30 @@
+application:setBackgroundColor(0xffffff)
+
 screenWidth = application:getContentWidth()
 screenHeight = application:getContentHeight()
 
--- Loads all graphics
-imgBackground = Bitmap.new(Texture.new("graphics/home-bg.png"))
-imgLogo = Bitmap.new(Texture.new("graphics/logo.png"))
-imgStart0 = Bitmap.new(Texture.new("graphics/start-0.png"))
-imgStart1 = Bitmap.new(Texture.new("graphics/start-1.png"))
-imgAbout0 = Bitmap.new(Texture.new("graphics/about-0.png"))
-imgAbout1 = Bitmap.new(Texture.new("graphics/about-1.png"))
+-- Loads graphics
+imgLogo = Bitmap.new(Texture.new("graphics/logo.png", true))
+imgStart = Bitmap.new(Texture.new("graphics/start.png", true))
+imgAbout = Bitmap.new(Texture.new("graphics/about.png", true))
+imgBack = Bitmap.new(Texture.new("graphics/back.png", true))
+imgPopup = Bitmap.new(Texture.new("graphics/popup.png", true))
+imgBack2 = Bitmap.new(Texture.new("graphics/back2.png", true))
+imgPlayagain = Bitmap.new(Texture.new("graphics/playagain.png", true))
 
+-- Loads sounds
+music = Music.new("sounds/music.mp3")
+
+sounds = Sounds.new()
+sounds:add("swipe", "sounds/swipe.wav")
+sounds:on()
+
+-- absolute x and y position
+dx = application:getLogicalTranslateX() / application:getLogicalScaleX()
+dy = application:getLogicalTranslateY() / application:getLogicalScaleY()
+	
 -- Register scenes
-local sceneManager = SceneManager.new({
+sceneManager = SceneManager.new({
 	["menu"] = Menu,
 	["puzzle"] = Puzzle
 })

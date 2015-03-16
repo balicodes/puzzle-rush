@@ -1,14 +1,7 @@
 Arena = Core.class(Sprite)
 
 function Arena:init()
-	self.screenWidth = application:getContentWidth()
-	self.screenHeight = application:getContentHeight()
-	
-	self.arenaWidth = self.screenWidth * 0.9
-	
-	if self.screenWidth > self.screenHeight then
-		self.arenaWidth = self.screenHeight * 0.9
-	end
+	self.arenaWidth = screenWidth * 0.9
 end
 
 function Arena:getWidth()
@@ -16,17 +9,9 @@ function Arena:getWidth()
 end
 
 function Arena:getArenaX()
-	if self.screenWidth > self.screenHeight then
-		return (self.screenWidth - self.arenaWidth)/2
-	else
-		return (self.screenWidth - self.arenaWidth)/2
-	end
+	return (screenWidth - self.arenaWidth)/2
 end
 
 function Arena:getArenaY()
-	if self.screenWidth > self.screenHeight then
-		return (self.screenHeight - self.arenaWidth)/2
-	else
-		return (self.screenWidth - self.arenaWidth)/2
-	end
+	return -dy + 120
 end

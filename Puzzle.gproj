@@ -1,18 +1,51 @@
 <project>
- <properties fps="60" retinaDisplay="0" architecture="1" mouseTouchOrder="0" scaleMode="3" mouseToTouch="1" encryptCode="0" encryptAssets="0" touchToMouse="1" packageName="com.balitechy.puzzela" iosDevice="0" assetsOnly="0" logicalWidth="320" logicalHeight="480" autorotation="0" orientation="0">
-  <imageScales/>
+ <properties orientation="0" retinaDisplay="0" architecture="1" assetsOnly="0" iosDevice="0" mouseToTouch="1" encryptAssets="0" touchToMouse="1" encryptCode="0" mouseTouchOrder="0" logicalHeight="480" packageName="com.balitechy.puzzela" scaleMode="3" logicalWidth="320" fps="60" autorotation="0">
+  <imageScales>
+   <scale suffix="@2x" scale="2"/>
+  </imageScales>
  </properties>
+ <folder name="sounds">
+  <file source="sounds/music.mp3"/>
+  <file source="sounds/swipe.wav"/>
+ </folder>
+ <file source="popup.lua"/>
  <folder name="graphics">
-  <file source="graphics/start-1.png"/>
-  <file source="graphics/start-0.png"/>
+  <file source="graphics/back2.png"/>
+  <file source="graphics/playagain.png"/>
+  <file source="graphics/popup.png"/>
+  <file source="graphics/back.png"/>
+  <file source="graphics/back@2x.png"/>
+  <file source="graphics/start.png"/>
+  <file source="graphics/start@2x.png"/>
+  <file source="graphics/about.png"/>
+  <file source="graphics/about@2x.png"/>
+  <file source="graphics/reload@2x.png"/>
+  <file source="graphics/toolbar@2x.png"/>
+  <file source="graphics/toolbar.png"/>
+  <file source="graphics/reload.png"/>
+  <file source="graphics/logo@2x.png"/>
+  <file source="graphics/15.png"/>
+  <file source="graphics/14.png"/>
+  <file source="graphics/13.png"/>
+  <file source="graphics/12.png"/>
+  <file source="graphics/11.png"/>
+  <file source="graphics/10.png"/>
+  <file source="graphics/9.png"/>
+  <file source="graphics/8.png"/>
+  <file source="graphics/7.png"/>
+  <file source="graphics/6.png"/>
+  <file source="graphics/5.png"/>
+  <file source="graphics/4.png"/>
+  <file source="graphics/3.png"/>
+  <file source="graphics/2.png"/>
+  <file source="graphics/1.png"/>
   <file source="graphics/logo.png"/>
-  <file source="graphics/home-bg.png"/>
-  <file source="graphics/about-1.png"/>
-  <file source="graphics/about-0.png"/>
  </folder>
  <file source="menu.lua"/>
  <file source="puzzle.lua"/>
  <folder name="modules">
+  <file source="modules/Music.lua"/>
+  <file source="modules/Sounds.lua"/>
   <file source="modules/scenemanager.lua"/>
   <file source="modules/easing.lua"/>
   <file source="modules/button.lua"/>
