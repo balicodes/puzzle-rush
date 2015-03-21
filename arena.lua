@@ -1,7 +1,7 @@
 Arena = Core.class(Sprite)
 
 function Arena:init()
-	self.arenaWidth = screenWidth * 0.9
+	self.arenaWidth = screenWidth * 0.95
 end
 
 function Arena:getWidth()
@@ -13,5 +13,5 @@ function Arena:getArenaX()
 end
 
 function Arena:getArenaY()
-	return -dy + 120
+	return -dy + 100
 end

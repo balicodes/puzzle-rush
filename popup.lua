@@ -1,6 +1,8 @@
 Popup = Core.class(Sprite)
 
-function Popup:init()	
+function Popup:init(status)	
+	music:off()
+	
 	-- draw overlay
 	self.shape = Shape.new()
 	self.shape:setFillStyle(Shape.SOLID, 0xffffff, 0.5)
@@ -19,17 +21,19 @@ function Popup:init()
 	
 	-- center popup
 	imgPopup:setPosition((screenWidth-imgPopup:getWidth())/2, (screenHeight-imgPopup:getHeight())/2)
-	imgBack2:setPosition(imgPopup:getX() + 25, imgPopup:getY()+imgPopup:getHeight() - imgBack2:getHeight()-10)
-	imgBack2:addEventListener(Event.MOUSE_UP, self.toHome, self)
+	imgPopup2:setPosition((screenWidth-imgPopup2:getWidth())/2, (screenHeight-imgPopup2:getHeight())/2)
 	
-	imgPlayagain:setPosition(imgPopup:getX() + imgPopup:getWidth() - imgPlayagain:getWidth() - 25,
-							 imgPopup:getY()+imgPopup:getHeight() - imgPlayagain:getHeight()-25)
-	imgPlayagain:addEventListener(Event.MOUSE_UP, self.playAgain, self)
+	imgPopup:addEventListener(Event.MOUSE_UP, self.restartGame, self)
+	imgPopup2:addEventListener(Event.MOUSE_UP, self.restartGame, self)
 
 	self:addChild(self.shape)
-	self:addChild(imgPopup)
-	self:addChild(imgBack2)
-	self:addChild(imgPlayagain)
+	if status == "win" then
+		self:addChild(imgPopup)
+		sounds:play("win")
+	else
+		self:addChild(imgPopup2)
+		sounds:play("lose")
+	end
 end
 
 function Popup:disableTouch(event)
@@ -44,8 +48,8 @@ function Popup:toHome(event)
 	end
 end
 
-function Popup:playAgain(event)
-	if imgPlayagain:hitTestPoint(event.x, event.y) then
-		gotoScene("puzzle", SceneManager.fade, {rows=4, cols=4})
+function Popup:restartGame(event)
+	if imgPopup:hitTestPoint(event.x, event.y) or imgPopup2:hitTestPoint(event.x, event.y) then
+		gotoScene("menu", SceneManager.flip)
 	end
 end

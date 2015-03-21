@@ -1,49 +1,43 @@
 <project>
- <properties orientation="0" retinaDisplay="0" architecture="1" assetsOnly="0" iosDevice="0" mouseToTouch="1" encryptAssets="0" touchToMouse="1" encryptCode="0" mouseTouchOrder="0" logicalHeight="480" packageName="com.balitechy.puzzela" scaleMode="3" logicalWidth="320" fps="60" autorotation="0">
+ <properties mouseTouchOrder="0" mouseToTouch="1" encryptCode="0" iosDevice="0" touchToMouse="1" packageName="com.balitechy.puzzela" encryptAssets="0" fps="60" assetsOnly="0" logicalWidth="320" orientation="0" logicalHeight="480" autorotation="0" scaleMode="3" architecture="1" retinaDisplay="0">
   <imageScales>
    <scale suffix="@2x" scale="2"/>
   </imageScales>
  </properties>
+ <folder name="fonts">
+  <file source="fonts/KatahdinRound.otf"/>
+ </folder>
  <folder name="sounds">
+  <file source="sounds/win.wav"/>
+  <file source="sounds/lose.wav"/>
+  <file source="sounds/tick.wav"/>
   <file source="sounds/music.mp3"/>
-  <file source="sounds/swipe.wav"/>
  </folder>
  <file source="popup.lua"/>
  <folder name="graphics">
-  <file source="graphics/back2.png"/>
-  <file source="graphics/playagain.png"/>
+  <file source="graphics/tile.png"/>
+  <file source="graphics/developer@2x.png"/>
+  <file source="graphics/developer.png"/>
+  <file source="graphics/menutitle.png"/>
+  <file source="graphics/menutitle@2x.png"/>
+  <file source="graphics/start44.png"/>
+  <file source="graphics/start44@2x.png"/>
+  <file source="graphics/start55.png"/>
+  <file source="graphics/start55@2x.png"/>
+  <file source="graphics/start66.png"/>
+  <file source="graphics/start66@2x.png"/>
+  <file source="graphics/bg.png"/>
+  <file source="graphics/popup2.png"/>
   <file source="graphics/popup.png"/>
-  <file source="graphics/back.png"/>
-  <file source="graphics/back@2x.png"/>
-  <file source="graphics/start.png"/>
-  <file source="graphics/start@2x.png"/>
-  <file source="graphics/about.png"/>
-  <file source="graphics/about@2x.png"/>
   <file source="graphics/reload@2x.png"/>
-  <file source="graphics/toolbar@2x.png"/>
-  <file source="graphics/toolbar.png"/>
   <file source="graphics/reload.png"/>
   <file source="graphics/logo@2x.png"/>
-  <file source="graphics/15.png"/>
-  <file source="graphics/14.png"/>
-  <file source="graphics/13.png"/>
-  <file source="graphics/12.png"/>
-  <file source="graphics/11.png"/>
-  <file source="graphics/10.png"/>
-  <file source="graphics/9.png"/>
-  <file source="graphics/8.png"/>
-  <file source="graphics/7.png"/>
-  <file source="graphics/6.png"/>
-  <file source="graphics/5.png"/>
-  <file source="graphics/4.png"/>
-  <file source="graphics/3.png"/>
-  <file source="graphics/2.png"/>
-  <file source="graphics/1.png"/>
   <file source="graphics/logo.png"/>
  </folder>
  <file source="menu.lua"/>
  <file source="puzzle.lua"/>
  <folder name="modules">
+  <file source="modules/Countdown.lua"/>
   <file source="modules/Music.lua"/>
   <file source="modules/Sounds.lua"/>
   <file source="modules/scenemanager.lua"/>

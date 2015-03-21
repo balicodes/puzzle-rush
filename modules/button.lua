@@ -7,9 +7,10 @@ This code is MIT licensed, see http://www.opensource.org/licenses/mit-license.ph
 
 Button = gideros.class(Sprite)
 
-function Button:init(upState, downState)
+function Button:init(upState, downState, mode)
 	self.upState = upState
 	self.downState = downState
+	self.mode = mode or 1 -- modes: downscale, toggle
 		
 	self.focus = false
 
@@ -84,21 +85,34 @@ end
 
 -- if state is true show downState else show upState
 function Button:updateVisualState(state)
-	if state then
-		if self:contains(self.upState) then
-			self:removeChild(self.upState)
-		end
-		
-		if not self:contains(self.downState) then
-			self:addChild(self.downState)
-		end
-	else
-		if self:contains(self.downState) then
-			self:removeChild(self.downState)
-		end
-		
-		if not self:contains(self.upState) then
-			self:addChild(self.upState)
+	if self.mode == 1 then
+		if state then
+			if self:contains(self.upState) then
+				self:removeChild(self.upState)
+			end
+			
+			if not self:contains(self.downState) then
+				self:addChild(self.downState)
+			end
+		else
+			if self:contains(self.downState) then
+				self:removeChild(self.downState)
+			end
+			
+			if not self:contains(self.upState) then
+				self:addChild(self.upState)
+			end
 		end
 	end
+		
+	if self.mode == 2 then
+		self:addChild(self.upState)
+		
+		if state then
+			self.upState:setScale(1, 0.9)
+		else
+			self.upState:setScale(1, 1)
+		end
+	end
+		
 end

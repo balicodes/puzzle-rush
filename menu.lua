@@ -2,30 +2,40 @@ Menu = Core.class(Sprite)
 
 function Menu:init()
 	music:off()
+
+	imgLogo:setPosition((screenWidth-imgLogo:getWidth())/2, 50)
 	
-	imgLogo:setPosition((screenWidth-imgLogo:getWidth())/2, 30)
-	btnStart = Button.new(imgStart, imgStart)
-	btnAbout = Button.new(imgAbout, imgAbout)
-	btnStart:setPosition((screenWidth-imgStart:getWidth())/2, (screenHeight-imgStart:getHeight())/2)
+	btnStart44 = Button.new(imgStart44, imgStart44, 2)
+	btnStart55 = Button.new(imgStart55, imgStart55, 2)
+	btnStart66 = Button.new(imgStart66, imgStart66, 2)
 	
-	local about_dy = 0
-	local about_dx = 0
-	if dy > 0 then
-		about_dy = dy
-	end
-	if dx > 0 then
-		about_dx = dx
-	end
-		
-	btnAbout:setPosition(screenWidth-40 + about_dx, screenHeight-40 + about_dy)
+	imgMenutitle:setPosition((screenWidth-imgMenutitle:getWidth())/2, (screenHeight-imgMenutitle:getHeight())/2 - 30)
+	imgDeveloper:setPosition((screenWidth-imgDeveloper:getWidth())/2, screenHeight-imgDeveloper:getHeight()+ dy -10)
 	
-	btnStart:addEventListener("click", self.startGame, self)
+	btnStart44:setPosition((screenWidth-imgStart44:getWidth())/2, imgMenutitle:getY() + imgMenutitle:getHeight() + 20)
+	btnStart55:setPosition((screenWidth-imgStart55:getWidth())/2, btnStart44:getY() + imgStart55:getHeight() + 10)
+	btnStart66:setPosition((screenWidth-imgStart66:getWidth())/2, btnStart55:getY() + imgStart66:getHeight() + 10)
+	
+	btnStart44:addEventListener("click", self.startGame44, self)
+	btnStart55:addEventListener("click", self.startGame55, self)
+	btnStart66:addEventListener("click", self.startGame66, self)
 	
 	self:addChild(imgLogo)
-	self:addChild(btnStart)
-	self:addChild(btnAbout)
+	self:addChild(imgMenutitle)
+	self:addChild(imgDeveloper)
+	self:addChild(btnStart44)
+	self:addChild(btnStart55)
+	self:addChild(btnStart66)
 end
 
-function Menu:startGame(event)
-	gotoScene("puzzle", SceneManager.fade, {rows=4, cols=4})
+function Menu:startGame44(event)
+	gotoScene("puzzle", SceneManager.flipWithFade, {rows=4, cols=4, time=60})
+end
+
+function Menu:startGame55(event)
+	gotoScene("puzzle", SceneManager.flipWithFade, {rows=5, cols=5, time=60})
+end
+
+function Menu:startGame66(event)
+	gotoScene("puzzle", SceneManager.flipWithFade, {rows=6, cols=6, time=60})
 end

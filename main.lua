@@ -1,28 +1,33 @@
-application:setBackgroundColor(0xffffff)
+application:setBackgroundColor(0x2b0000)
 
 screenWidth = application:getContentWidth()
 screenHeight = application:getContentHeight()
 
 -- Loads graphics
+imgBg = Bitmap.new(Texture.new("graphics/bg.png", true))
 imgLogo = Bitmap.new(Texture.new("graphics/logo.png", true))
-imgStart = Bitmap.new(Texture.new("graphics/start.png", true))
-imgAbout = Bitmap.new(Texture.new("graphics/about.png", true))
-imgBack = Bitmap.new(Texture.new("graphics/back.png", true))
+imgReload = Bitmap.new(Texture.new("graphics/reload.png", true))
+imgDeveloper = Bitmap.new(Texture.new("graphics/developer.png", true))
+imgMenutitle = Bitmap.new(Texture.new("graphics/menutitle.png", true))
+imgStart44 = Bitmap.new(Texture.new("graphics/start44.png", true))
+imgStart55 = Bitmap.new(Texture.new("graphics/start55.png", true))
+imgStart66 = Bitmap.new(Texture.new("graphics/start66.png", true))
 imgPopup = Bitmap.new(Texture.new("graphics/popup.png", true))
-imgBack2 = Bitmap.new(Texture.new("graphics/back2.png", true))
-imgPlayagain = Bitmap.new(Texture.new("graphics/playagain.png", true))
+imgPopup2 = Bitmap.new(Texture.new("graphics/popup2.png", true))
 
 -- Loads sounds
 music = Music.new("sounds/music.mp3")
 
 sounds = Sounds.new()
-sounds:add("swipe", "sounds/swipe.wav")
+sounds:add("tick", "sounds/tick.wav")
+sounds:add("win", "sounds/win.wav")
+sounds:add("lose", "sounds/lose.wav")
 sounds:on()
 
 -- absolute x and y position
 dx = application:getLogicalTranslateX() / application:getLogicalScaleX()
 dy = application:getLogicalTranslateY() / application:getLogicalScaleY()
-	
+
 -- Register scenes
 sceneManager = SceneManager.new({
 	["menu"] = Menu,
@@ -38,6 +43,13 @@ end
 
 -- set first scenne to main menu
 gotoScene("menu", SceneManager.fade)
+
+print(screenWidth)
+print(imgBg:getWidth())
+
+-- add background
+imgBg:setPosition((screenWidth-imgBg:getWidth())/2, (screenHeight-imgBg:getHeight())/2)
+stage:addChild(imgBg)
 
 stage:addChild(sceneManager)
 stage:addEventListener(Event.KEY_DOWN, function()
