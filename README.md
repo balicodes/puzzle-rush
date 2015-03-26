@@ -1,5 +1,5 @@
-Puzzela
-=======
+Puzzle Rush
+===========
 
 -- UNDER DEVELOPMENT --
 
