@@ -2,7 +2,7 @@ Menu = Core.class(Sprite)
 
 function Menu:init()
 	music:off()
-
+	
 	imgLogo:setPosition((screenWidth-imgLogo:getWidth())/2, 50)
 	
 	btnStart44 = Button.new(imgStart44, imgStart44, 2)
@@ -29,13 +29,13 @@ function Menu:init()
 end
 
 function Menu:startGame44(event)
-	gotoScene("puzzle", SceneManager.flipWithFade, {rows=4, cols=4, time=60})
+	gotoScene("puzzle", SceneManager.moveFromRight, {rows=4, cols=4, time=60})
 end
 
 function Menu:startGame55(event)
-	gotoScene("puzzle", SceneManager.flipWithFade, {rows=5, cols=5, time=60})
+	gotoScene("puzzle", SceneManager.moveFromRight, {rows=5, cols=5, time=60})
 end
 
 function Menu:startGame66(event)
-	gotoScene("puzzle", SceneManager.flipWithFade, {rows=6, cols=6, time=60})
+	gotoScene("puzzle", SceneManager.moveFromRight, {rows=6, cols=6, time=60})
 end

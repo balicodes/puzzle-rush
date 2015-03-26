@@ -6,7 +6,6 @@ screenHeight = application:getContentHeight()
 -- Loads graphics
 imgBg = Bitmap.new(Texture.new("graphics/bg.png", true))
 imgLogo = Bitmap.new(Texture.new("graphics/logo.png", true))
-imgReload = Bitmap.new(Texture.new("graphics/reload.png", true))
 imgDeveloper = Bitmap.new(Texture.new("graphics/developer.png", true))
 imgMenutitle = Bitmap.new(Texture.new("graphics/menutitle.png", true))
 imgStart44 = Bitmap.new(Texture.new("graphics/start44.png", true))
@@ -14,6 +13,13 @@ imgStart55 = Bitmap.new(Texture.new("graphics/start55.png", true))
 imgStart66 = Bitmap.new(Texture.new("graphics/start66.png", true))
 imgPopup = Bitmap.new(Texture.new("graphics/popup.png", true))
 imgPopup2 = Bitmap.new(Texture.new("graphics/popup2.png", true))
+
+imgToolbg = Bitmap.new(Texture.new("graphics/toolbar.png", true))
+imgReload = Bitmap.new(Texture.new("graphics/reload.png", true))
+imgPlay = Bitmap.new(Texture.new("graphics/play.png", true))
+imgPause = Bitmap.new(Texture.new("graphics/pause.png", true))
+imgResume = Bitmap.new(Texture.new("graphics/resume.png", true))
+imgBackmenu = Bitmap.new(Texture.new("graphics/backmenu.png", true))
 
 -- Loads sounds
 music = Music.new("sounds/music.mp3")
@@ -43,9 +49,6 @@ end
 
 -- set first scenne to main menu
 gotoScene("menu", SceneManager.fade)
-
-print(screenWidth)
-print(imgBg:getWidth())
 
 -- add background
 imgBg:setPosition((screenWidth-imgBg:getWidth())/2, (screenHeight-imgBg:getHeight())/2)

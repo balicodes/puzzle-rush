@@ -3,66 +3,16 @@ Puzzle = Core.class(Sprite)
 function Puzzle:init(params)
 	music:on(1)
 	self.finish = false
+	self.win = false
+	self.pause = false
 	
 	local toolbar_y = 0
 	if dy > 0 then
 		toolbar_y = -dy
 	end
 	
-	local font = TTFont.new("fonts/KatahdinRound.otf", 40, true)
-	
-	local timeout = TextField.new(font, "Timeout!")
-	timeout:setPosition(20, 45+toolbar_y)
-	timeout:setTextColor(0xffffff)
-	
-	local minutes = TextField.new(font, "{m}")
-	minutes:setPosition(20, 45+toolbar_y)
-	minutes:setTextColor(0xffffff)
-	
-	local seconds = TextField.new(font, ": {s}")
-	seconds:setPosition(55, 45+toolbar_y)
-	seconds:setTextColor(0xffffff)
-	
-	self.cd = nil
-	self.countdown_config  = {
-		--time to specific timestamp
-		--time = 1639324800
-		
-		--or provide time left
-		year = 0,
-		month = 0,
-		week = 0,
-		day = 0,
-		hour = 0,
-		min = 0,
-		sec = params.time,
-		
-		--textfields where to output countdown
-		label_sec = seconds,
-		label_min = minutes,
-		--label_hour = hours,
-		--label_day = days,
-		--label_week = weeks,
-		--label_month = months,
-		--label_year = years,
-		
-		--TextField to show when countdown ended
-		label_end = timeout,
-		--hide ended units
-		hide_zeros = false,
-		--use leading zeros for hours, minutes and seconds
-		leading_zeros = true,
-		--callback function on countdown end
-		onend = function() if not finish then self:addChild(Popup.new("lose"))end end,
-		--callback function on each coutndown step
-		--provides seconds left till end of countdown
-		onstep = function(seconds) --sounds:play("tick") 
-		end
-	}
-
-	self.btnReload = Button.new(imgReload, imgReload, 2)
-	self.btnReload:setPosition(dx + screenWidth - self.btnReload:getWidth() - 15, -dy + 10)
-	self.btnReload:addEventListener("click", self.onReload, self)
+	self.toolbar = Toolbar.new(self)
+	self.toolbar:setPosition((screenWidth-self.toolbar:getWidth())/2, 10+toolbar_y)
 
 	-- Initialize the puzzle Arena
 	self.arena = Arena.new()
@@ -81,10 +31,8 @@ function Puzzle:init(params)
 	self.tiles = {}
 
 	-- add actors to the puzzle
-	--self:addChild(toolbar)
-	self:addChild(self.btnReload)
+	self:addChild(self.toolbar)
 	self:addChild(self.arena)
-	self:createTimer()
 	
 	-- shuffle on first load
 	self:shuffleTiles()
@@ -94,6 +42,7 @@ end
 
 function Puzzle:shuffleTiles()
 	self.finish = false
+	self.win = false
 	
 	-- clear tiles array
 	self.tiles = {}
@@ -135,20 +84,8 @@ function Puzzle:shuffleTiles()
 	self:setMovementFlags()
 end
 
-function Puzzle:createTimer()
-	if self.cd == nil then
-		self.cd = Countdown.new(self.countdown_config)
-	else
-		self.cd:stop()
-		self:removeChild(self.cd)
-		self.cd = Countdown.new(self.countdown_config)
-	end
-	self:addChild(self.cd)
-end
-
 function Puzzle:onReload(event)
 		self:shuffleTiles()
-		self:createTimer()
 end
 
 function Puzzle:compareNumbers(newNumbers)
@@ -214,12 +151,30 @@ function Puzzle:setMovementFlags()
 	-- check if new formation are correct
 	if self:compareNumbers(newNumbers) then
 		self.finish = true
+		self.win = true
 	end
 end
 
+function Puzzle:gameTimeout()
+	self.finish = true
+	self.win = false
+end
+
 function Puzzle:onEnterFrame(event)
-	if self.finish then
+	if self.pause then
+		self:addChild(Paused.new(self))
+		self.pause = false
+	end
+	
+	if self.finish and self.win then
 		self:addChild(Popup.new("win"))
 		self.finish = false
+		self.toolbar:stopAction()
+	end
+	
+	if self.finish and not self.win then
+		self:addChild(Popup.new("lose"))
+		self.finish = false
+		self.toolbar:stopAction()
 	end
 end
