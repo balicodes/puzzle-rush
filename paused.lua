@@ -25,6 +25,7 @@ function Paused:backToMenu(event)
 end
 
 function Paused:resumeGame(event)
+	music:on(1)
 	self.game:removeChild(self)
 	self.game.toolbar:toggleGame()
 end

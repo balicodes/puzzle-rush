@@ -848,11 +848,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="1136.3549"
-     inkscape:cy="1810.227"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="1013.4951"
+     inkscape:cy="1523.2872"
      inkscape:document-units="px"
-     inkscape:current-layer="g4011"
+     inkscape:current-layer="layer3"
      showgrid="false"
      inkscape:window-width="1600"
      inkscape:window-height="824"
@@ -6659,6 +6659,82 @@
          id="tspan6332"
          x="1079.6038"
          y="-144.50659">balicodes+games 2015</tspan></text>
+    <g
+       id="g5165"
+       transform="translate(2.3236135,-85.285713)"
+       inkscape:export-filename="/home/eka/workspace/gideros/Puzzela/graphics/backmenu@2x.png"
+       inkscape:export-xdpi="213.51126"
+       inkscape:export-ydpi="213.51126">
+      <g
+         id="g5161"
+         transform="translate(0.99999605,-5.6719592)">
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect5159"
+           width="155.71423"
+           height="40.15229"
+           x="1061.1101"
+           y="-377.62357"
+           ry="3.9285715" />
+        <rect
+           ry="3.9285715"
+           y="-379.62357"
+           x="1063.1101"
+           height="40.15229"
+           width="155.71423"
+           id="rect5085"
+           style="fill:#800000;fill-opacity:1;stroke:none" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:16.12232399px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Katahdin Round;-inkscape-font-specification:Katahdin Round"
+         x="1076.782"
+         y="-358.25412"
+         id="text5087"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan5089"
+           x="1076.782"
+           y="-358.25412">back to MENU</tspan></text>
+    </g>
+    <g
+       transform="translate(2.3236135,-166.60299)"
+       id="g5188"
+       inkscape:export-filename="/home/eka/workspace/gideros/Puzzela/graphics/resume@2x.png"
+       inkscape:export-xdpi="213.51187"
+       inkscape:export-ydpi="213.51187">
+      <g
+         transform="translate(0.99999605,-5.6719592)"
+         id="g5191">
+        <rect
+           ry="3.9285715"
+           y="-377.62357"
+           x="1061.1101"
+           height="40.15229"
+           width="155.71423"
+           id="rect5193"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+        <rect
+           style="fill:#800000;fill-opacity:1;stroke:none"
+           id="rect5195"
+           width="155.71423"
+           height="40.15229"
+           x="1063.1101"
+           y="-379.62357"
+           ry="3.9285715" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text5197"
+         y="-358.25412"
+         x="1076.782"
+         style="font-size:16.12232399px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffff00;fill-opacity:1;stroke:none;font-family:Katahdin Round;-inkscape-font-specification:Katahdin Round"
+         xml:space="preserve"><tspan
+           y="-358.25412"
+           x="1076.782"
+           id="tspan5199"
+           sodipodi:role="line">RESUME GAME</tspan></text>
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -7094,7 +7170,10 @@
       <g
          id="g5250-6"
          style="display:inline"
-         transform="matrix(0.61904717,0,0,0.61904717,429.53842,-118.66157)">
+         transform="matrix(0.61904717,0,0,0.61904717,360.96699,-118.66157)"
+         inkscape:export-filename="/home/eka/workspace/gideros/Puzzela/graphics/pause@2x.png"
+         inkscape:export-xdpi="179.59947"
+         inkscape:export-ydpi="179.59947">
         <rect
            style="fill:#550000;fill-opacity:1;stroke:#290100;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
            id="rect5062-0"
@@ -7133,12 +7212,12 @@
         </g>
       </g>
       <g
-         inkscape:export-ydpi="106.90423"
-         inkscape:export-xdpi="106.90423"
-         inkscape:export-filename="/home/eka/workspace/gideros/Puzzela/graphics/pause.png"
+         inkscape:export-ydpi="179.59947"
+         inkscape:export-xdpi="179.59947"
+         inkscape:export-filename="/home/eka/workspace/gideros/Puzzela/graphics/play@2x.png"
          id="g5140-6"
          style="display:inline"
-         transform="matrix(0.61904717,0,0,0.61904717,371.52741,-117.77724)">
+         transform="matrix(0.61904717,0,0,0.61904717,364.38455,-119.9201)">
         <rect
            ry="6.3999963"
            y="-734.01825"
